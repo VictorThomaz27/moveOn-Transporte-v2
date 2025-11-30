@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveOn - Transporte</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <div class="home-container">
+            <div class="logo-container">
+                <img src="./public/images/logo.jpeg" alt="logo">
+            </div>
+            <h1 class="home-title">MoveOn Transportes</h1>
+            <p class="home-subtitle">Sistema de Gerenciamento de Entregas</p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <h3>📦 Clientes</h3>
+                    <p>Gerencie todos os seus clientes de forma simples e organizada.</p>
+                    <a href="./public/pages/clientes/clientes.html" class="btn btn-primary">Acessar</a>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🚗 Veículos</h3>
+                    <p>Cadastre e controle toda a sua frota de veículos.</p>
+                    <a href="./public/pages/veiculos/veiculos.html" class="btn btn-primary">Acessar</a>
+                </div>
+
+                <div class="feature-card">
+                    <h3>👨‍✈️ Motoristas</h3>
+                    <p>Gerencie os motoristas e seus respectivos veículos.</p>
+                    <a href="./public/pages/motoristas/motoristas.html" class="btn btn-primary">Acessar</a>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📍 Entregas</h3>
+                    <p>Controle todas as entregas realizadas pela empresa.</p>
+                    <a href="./public/pages/entregas/entregas.html" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carregar navbar
+        fetch('./public/components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

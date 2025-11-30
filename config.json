@@ -1,0 +1,76 @@
+{
+  "projeto": "MoveOn Transportes",
+  "versao": "1.0",
+  "desenvolvido": "Novembro 2025",
+  "tecnologias": {
+    "frontend": ["HTML5", "CSS3", "JavaScript"],
+    "backend": ["PHP"],
+    "armazenamento": "JSON"
+  },
+  "estrutura_dados": {
+    "clientes": {
+      "campos": ["id", "nome", "email", "telefone"],
+      "exemplo": {
+        "id": 1,
+        "nome": "João Silva",
+        "email": "joao@email.com",
+        "telefone": "(11) 98765-4321"
+      }
+    },
+    "veiculos": {
+      "campos": ["id", "marca", "modelo", "cor", "placa"],
+      "exemplo": {
+        "id": 1,
+        "marca": "Fiat",
+        "modelo": "Fiorino",
+        "cor": "Branca",
+        "placa": "ABC-1234"
+      }
+    },
+    "motoristas": {
+      "campos": ["id", "nome", "cnh", "telefone", "veiculoId"],
+      "exemplo": {
+        "id": 1,
+        "nome": "Carlos Oliveira",
+        "cnh": "12345678901",
+        "telefone": "(11) 95432-1098",
+        "veiculoId": 1
+      }
+    },
+    "entregas": {
+      "campos": ["id", "clienteId", "motoristaId", "enderecoOrigem", "enderecoDestino", "preco"],
+      "exemplo": {
+        "id": 1,
+        "clienteId": 1,
+        "motoristaId": 1,
+        "enderecoOrigem": {
+          "rua": "Av. Paulista",
+          "numero": "1000",
+          "cidade": "São Paulo",
+          "estado": "SP",
+          "cep": "01310-100"
+        },
+        "enderecoDestino": {
+          "rua": "Rua Augusta",
+          "numero": "500",
+          "cidade": "São Paulo",
+          "estado": "SP",
+          "cep": "01305-000"
+        },
+        "preco": "50.00"
+      }
+    }
+  },
+  "apis": {
+    "clientes": "/api/clientes.php",
+    "veiculos": "/api/veiculos.php",
+    "motoristas": "/api/motoristas.php",
+    "entregas": "/api/entregas.php"
+  },
+  "metodos_http": {
+    "GET": "Listar todos os registros",
+    "POST": "Criar novo registro",
+    "PUT": "Atualizar registro existente",
+    "DELETE": "Excluir registro"
+  }
+}

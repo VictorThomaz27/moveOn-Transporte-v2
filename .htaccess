@@ -1,0 +1,27 @@
+# Habilitar rewrite
+RewriteEngine On
+
+# Permitir acesso a arquivos existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Página inicial
+DirectoryIndex index.html
+
+# Configurações de segurança
+<Files "*.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Permitir acesso às APIs
+<FilesMatch "\.(php)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Tipos MIME
+AddType application/json .json
+AddType text/html .html
+AddType text/css .css
+AddType application/javascript .js

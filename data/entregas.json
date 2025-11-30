@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "clienteId": 1,
+        "motoristaId": 1,
+        "enderecoOrigem": {
+            "rua": "Rua Do amor",
+            "numero": "69",
+            "cidade": "Carapicuiba",
+            "estado": "SP",
+            "cep": "6969689"
+        },
+        "enderecoDestino": {
+            "rua": "Rua da Bagun\u00e7a",
+            "numero": "77",
+            "cidade": "Osasco",
+            "estado": "SP",
+            "cep": "77878787"
+        },
+        "preco": "200"
+    }
+]

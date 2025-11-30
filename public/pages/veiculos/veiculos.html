@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículos - MoveOn Transporte</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <div class="card">
+            <div class="header-actions">
+                <h1 class="card-title">Gerenciar Veículos</h1>
+                <button class="btn btn-primary" onclick="abrirModal()">+ Novo Veículo</button>
+            </div>
+
+            <div id="mensagem"></div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Cor</th>
+                            <th>Placa</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaVeiculos">
+                        <tr>
+                            <td colspan="6" style="text-align: center;">Carregando...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalVeiculo" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitulo">Novo Veículo</h2>
+                <span class="close" onclick="fecharModal()">&times;</span>
+            </div>
+            <form id="formVeiculo" onsubmit="salvarVeiculo(event)">
+                <input type="hidden" id="veiculoId">
+                
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cor">Cor:</label>
+                    <input type="text" id="cor" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="placa">Placa:</label>
+                    <input type="text" id="placa" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button type="button" class="btn btn-danger" onclick="fecharModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../js/veiculos.js"></script>
+    <script>
+        // Carregar navbar
+        fetch('../../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

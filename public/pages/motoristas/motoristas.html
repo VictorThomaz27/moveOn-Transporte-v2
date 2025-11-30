@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motoristas - MoveOn Transporte</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <div class="card">
+            <div class="header-actions">
+                <h1 class="card-title">Gerenciar Motoristas</h1>
+                <button class="btn btn-primary" onclick="abrirModal()">+ Novo Motorista</button>
+            </div>
+
+            <div id="mensagem"></div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>CNH</th>
+                            <th>Telefone</th>
+                            <th>Veículo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaMotoristas">
+                        <tr>
+                            <td colspan="6" style="text-align: center;">Carregando...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalMotorista" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitulo">Novo Motorista</h2>
+                <span class="close" onclick="fecharModal()">&times;</span>
+            </div>
+            <form id="formMotorista" onsubmit="salvarMotorista(event)">
+                <input type="hidden" id="motoristaId">
+                
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cnh">CNH:</label>
+                    <input type="text" id="cnh" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="veiculoId">Veículo:</label>
+                    <select id="veiculoId" class="form-control" required>
+                        <option value="">Selecione um veículo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button type="button" class="btn btn-danger" onclick="fecharModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../js/motoristas.js"></script>
+    <script>
+        // Carregar navbar
+        fetch('../../components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
